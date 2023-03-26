@@ -1,0 +1,13 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const PREFIX = '/';
+
+client.on('message', async message => {
+  if (message.content.startsWith(PREFIX + 'makecabin')) {
+    const channelName = 'Cabin ' + Math.floor(Math.random() * 1000); // generate random cabin number
+    const voiceChannel = await message.guild.channels.create(channelName, { type: 'voice' }); // create voice channel
+    message.reply(`Voice channel ${voiceChannel.name} has been created!`); // notify user of channel creation
+  }
+});
+
+client.login(process.env.MTA4OTM1NjI0OTk5MDE4OTIyNg.GftkeB.etmzs68-c6fbpqCYlFIIrsMFl5bVKrnz6qlipw);
